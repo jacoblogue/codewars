@@ -12,7 +12,7 @@ function checkDuplicate(raw) {
   let isDuplicate = false;
 
   for (let i = 1; i < raw.length; i++) {
-    if (raw[i] == cache.at(-1)) {
+    if (raw[i] == cache[cache.length - 1]) {
       isDuplicate = true;
       count++;
       lastIndex = i + 1;
@@ -54,10 +54,12 @@ function checkSequence(raw) {
   }
 
   if (cache.length >= 3 && Math.abs(interval) == 1) {
-    let outputString = `${cache[0]}-${cache.at(-1)}`;
+    let outputString = `${cache[0]}-${cache[cache.length - 1]}`;
     return [raw.slice(lastIndex), outputString];
   } else if (cache.length > 2) {
-    let outputString = `${cache[0]}-${cache.at(-1)}/${Math.abs(interval)}`;
+    let outputString = `${cache[0]}-${cache[cache.length - 1]}/${Math.abs(
+      interval
+    )}`;
     return [raw.slice(lastIndex), outputString];
   } else {
     return false;
