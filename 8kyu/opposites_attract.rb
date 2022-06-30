@@ -2,6 +2,6 @@
 
 # Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
 
-def lovefunc( flower1, flower2 )
+def lovefunc(flower1, flower2)
   (flower1.odd? && flower2.even?) || (flower1.even? && flower2.odd?)
 end
