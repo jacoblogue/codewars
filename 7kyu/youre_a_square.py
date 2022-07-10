@@ -21,10 +21,14 @@
 import math
 
 
+# def is_square(n):
+#     if n == 0:
+#         return True
+#     if n < 0 or n % math.sqrt(n) != 0:
+#         return False
+#     else:
+#         return True
+
+
 def is_square(n):
-    if n == 0:
-        return True
-    if n < 0 or n % math.sqrt(n) != 0:
-        return False
-    else:
-        return True
+    return n > -1 and math.sqrt(n) % 1 == 0
