@@ -54,13 +54,7 @@ public static class Kata
 
   public static string Greet(string language)
   {
-    if (database.ContainsKey(language))
-    {
-      return database[language];
-    }
-    else
-    {
-      return database["english"];
-    }
+    return (database.ContainsKey(language))
+    ? database[language] : database["english"];
   }
 }
